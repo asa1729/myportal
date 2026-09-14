@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイアプリ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* スマホ風の本体フレーム */
+        .app-container {
+            width: 100%;
+            max-width: 414px; /* iPhoneサイズの幅 */
+            height: 100vh;
+            max-height: 844px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 8px solid #1e293b;
+        }
+
+        /* アプリヘッダー */
+        .app-header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-header h1 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .app-header p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* アプリメインエリア（ボタン一覧） */
+        .app-content {
+            flex: 1;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow-y: auto;
+        }
+
+        /* アプリ風ボタン（リンク） */
+        .app-btn {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1e293b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s;
+        }
+
+        /* ボタンを押したときのスマホっぽい引っ込みエフェクト */
+        .app-btn:active {
+            transform: scale(0.97);
+            background-color: #f8fafc;
+        }
+
+        .app-btn:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        /* アイコンエリア */
+        .btn-icon {
+            font-size: 2rem;
+            margin-right: 16px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border-radius: 12px;
+        }
+
+        /* ボタンテキストエリア */
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .btn-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 2px;
+        }
+
+        .btn-desc {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* 矢印マーク */
+        .btn-arrow {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: bold;
+        }
+
+        /* ナビゲーションバー（画面下の装飾） */
+        .app-footer {
+            padding: 12px;
+            text-align: center;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- ヘッダー -->
+        <header class="app-header">
+            <h1>マイ ポータル</h1>
+            <p>タップして各ページへ移動します</p>
+        </header>
+
+        <!-- メインボタンエリア -->
+        <main class="app-content">
+
+            <!-- ボタン 1 -->
+            <a href="https://example.com/page1" target="_blank" class="app-btn">
+                <div class="btn-icon">🌐</div>
+                <div class="btn-text">
+                    <span class="btn-title">公式Webサイト</span>
+                    <span class="btn-desc">最新情報やニュースはこちら</span>
+                </div>
+                <div class="btn-arrow">›</div>
+            </a>
+
+            <!-- ボタン 2 -->
+            <a href="https://example.com/page2" target="_blank" class="app-btn">
+                <div class="btn-icon">🛒</div>
+                <div class="btn-text">
+                    <span class="btn-title">オンラインショップ</span>
+                    <span class="btn-desc">限定グッズの購入はこちら</span>
+                </div>
+                <div class="btn-arrow">›</div>
+            </a>
+
+            <!-- ボタン 3 -->
+            <a href="https://example.com/page3" target="_blank" class="app-btn">
+                <div class="btn-icon">💬</div>
+                <div class="btn-text">
+                    <span class="btn-title">お問い合わせ</span>
+                    <span class="btn-desc">ご質問やサポートはこちら</span>
+                </div>
+                <div class="btn-arrow">›</div>
+            </a>
+
+        </main>
+
+        <!-- フッター -->
+        <footer class="app-footer">
+            &copy; 2026 My App Portal
+        </footer>
+    </div>
+
+</body>
+</html>
